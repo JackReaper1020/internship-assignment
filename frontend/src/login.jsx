@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { login, setToken } from "./api";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login({ setUser }) {
   const [username, setUsername] = useState("");
@@ -47,6 +48,10 @@ export default function Login({ setUser }) {
       />
       <button type="submit">Login</button>
       {error && <p style={{ color: "red" }}>{error}</p>}
+
+     <p>
+        Don't have an account? <Link to="/register">Register here</Link>
+      </p>
     </form>
   );
 }
